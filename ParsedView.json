@@ -1,0 +1,1132 @@
+{
+    "InternalType": "sql:File",
+    "Roles": [
+        "FILE"
+    ],
+    "Children": [
+        {
+            "InternalType": "sql:Body",
+            "Roles": [
+                "BODY"
+            ],
+            "Children": [
+                {
+                    "InternalType": "sql:Use",
+                    "Token": "[Legacy]",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                },
+                {
+                    "InternalType": "sql:GO",
+                    "Token": "GO",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                },
+                {
+                    "InternalType": "sql:SetEnvVal",
+                    "Token": "SET ANSI_NULLS ON",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                },
+                {
+                    "InternalType": "sql:GO",
+                    "Token": "GO",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                },
+                {
+                    "InternalType": "sql:SetEnvVal",
+                    "Token": "SET QUOTED_IDENTIFIER ON",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                },
+                {
+                    "InternalType": "sql:GO",
+                    "Token": "GO",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                },
+                {
+                    "InternalType": "sql:Query",
+                    "Token": "SELECT",
+                    "Roles": [
+                        "READ"
+                    ],
+                    "Children": [
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Message_Description]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'Facility Address'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Soft_Delete_IN]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Case",
+                                    "Roles": [
+                                        "SWITCH"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:When",
+                                            "Roles": [
+                                                "CASE"
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "InternalType": "",
+                                                    "Roles": [
+                                                        "CONDITION"
+                                                    ],
+                                                    "Children": [
+                                                        {
+                                                            "InternalType": "sql:Column",
+                                                            "Token": "[SOURCEDELETED]",
+                                                            "Properties": [
+                                                                {
+                                                                    "Qualifier": "[x]"
+                                                                }
+                                                            ],
+                                                            "Roles": [
+                                                                "IDENTIFIER",
+                                                                "QUALIFIED"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "InternalType": "sql:ComparisonOperator",
+                                                            "Token": "=",
+                                                            "Roles": [
+                                                                "OPERATOR",
+                                                                "EQUAL"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "InternalType": "sql:Primitive",
+                                                            "Token": "1",
+                                                            "Roles": [
+                                                                "PRIMITIVE"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:Primitive",
+                                                    "Token": "'Y'",
+                                                    "Roles": [
+                                                        "PRIMITIVE"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:Primitive",
+                                            "Token": "'N'",
+                                            "Roles": [
+                                                "PRIMITIVE"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Facility_CD]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[ORZ_RFRNC_CD]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Address_Type_Key]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "1",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Geographic_Address_KEY]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "2",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Street_Address_1_TX]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[PLC_ADDR_STREET]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Postal_CD]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[PLC_ADDR_ZIP]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Country_CD]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:ScalarFunction",
+                                    "Token": "IsNull",
+                                    "Roles": [
+                                        "FUNCTION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[RGN_CTRY_ABBR]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[ORZ_CTRY_ALPHA]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[City_NM]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[RGN_CITY_NM_OF_CZ]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[State_Province_CD]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[RGN_ST_ABBR]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[XORZ_DTS_DTTMSP_NB]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[DTS_DTTMSP]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[XORZ_Record_KEY]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[RECORD_KEY]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Source_Delete_IN]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[SOURCEDELETED]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Create_ID]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "NULL",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Create_TS]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:ScalarFunction",
+                                    "Token": "[dbo].[FormatDateTimeForXML]",
+                                    "Roles": [
+                                        "FUNCTION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[DATE]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:Primitive",
+                                            "Token": "NULL",
+                                            "Roles": [
+                                                "PRIMITIVE"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Modify_ID]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "NULL",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:Expression",
+                            "Properties": [
+                                {
+                                    "Alias": "[Modify_TS]"
+                                }
+                            ],
+                            "Roles": [
+                                "EXPRESSION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:ScalarFunction",
+                                    "Token": "[dbo].[FormatDateTimeForXML]",
+                                    "Roles": [
+                                        "FUNCTION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[DATE]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:Primitive",
+                                            "Token": "NULL",
+                                            "Roles": [
+                                                "PRIMITIVE"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:From",
+                            "Roles": [
+                                "DATASOURCE"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:TableSource",
+                                    "Properties": [
+                                        {
+                                            "Alias": "[x]WITH(NOLOCK)"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "DATASOURCE",
+                                        "QUALIFIED"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Table",
+                                            "Token": "[Legacy].[M204_XORZ]",
+                                            "Roles": [
+                                                "DATASOURCE"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Join",
+                                    "Token": "<class 'antlr4.Token.CommonToken'> JOIN",
+                                    "Roles": [
+                                        "JOINCLAUSE"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:TableSource",
+                                            "Properties": [
+                                                {
+                                                    "Alias": "[r]WITH(NOLOCK)"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "DATASOURCE",
+                                                "QUALIFIED"
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "InternalType": "sql:Table",
+                                                    "Token": "[Legacy].[M204_XORZ_REOCCUR]",
+                                                    "Roles": [
+                                                        "DATASOURCE"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:OnCondition",
+                                            "Roles": [
+                                                "CONDITION"
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "InternalType": "sql:Column",
+                                                    "Token": "[RECORD_KEY]",
+                                                    "Properties": [
+                                                        {
+                                                            "Qualifier": "[x]"
+                                                        }
+                                                    ],
+                                                    "Roles": [
+                                                        "IDENTIFIER",
+                                                        "QUALIFIED"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:ComparisonOperator",
+                                                    "Token": "=",
+                                                    "Roles": [
+                                                        "OPERATOR",
+                                                        "EQUAL"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:Column",
+                                                    "Token": "[XORZ_RECORD_KEY]",
+                                                    "Properties": [
+                                                        {
+                                                            "Qualifier": "[r]"
+                                                        }
+                                                    ],
+                                                    "Roles": [
+                                                        "IDENTIFIER",
+                                                        "QUALIFIED"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:OnCondition",
+                                            "Roles": [
+                                                "CONDITION"
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "InternalType": "sql:Column",
+                                                    "Token": "[OCCNO]",
+                                                    "Properties": [
+                                                        {
+                                                            "Qualifier": "[r]"
+                                                        }
+                                                    ],
+                                                    "Roles": [
+                                                        "IDENTIFIER",
+                                                        "QUALIFIED"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:ComparisonOperator",
+                                                    "Token": "=",
+                                                    "Roles": [
+                                                        "OPERATOR",
+                                                        "EQUAL"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:Primitive",
+                                                    "Token": "1",
+                                                    "Roles": [
+                                                        "PRIMITIVE"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:WhereCondition",
+                            "Roles": [
+                                "CONDITION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[RECTYPE]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:ComparisonOperator",
+                                    "Token": "=",
+                                    "Roles": [
+                                        "OPERATOR",
+                                        "EQUAL"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'ORZ.BASE'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:WhereCondition",
+                            "Roles": [
+                                "CONDITION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[ORZ_TYPE]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'TERMINAL'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'BREAKBULK'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'RELAY'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'RAILHEAD'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'REX SALVAGE STORE'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'GARAGE'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'PORT'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                },
+                                {
+                                    "InternalType": "sql:Primitive",
+                                    "Token": "'RELAY NO TERMINAL'",
+                                    "Roles": [
+                                        "PRIMITIVE"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:WhereCondition",
+                            "Roles": [
+                                "CONDITION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[ORZ_CLSD_IND]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:WhereCondition",
+                            "Roles": [
+                                "CONDITION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "sql:Column",
+                                    "Token": "[ORZ_RFRNC_CD]",
+                                    "Properties": [
+                                        {
+                                            "Qualifier": "[x]"
+                                        }
+                                    ],
+                                    "Roles": [
+                                        "IDENTIFIER",
+                                        "QUALIFIED"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:WhereCondition",
+                            "Roles": [
+                                "CONDITION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[RGN_CITY_NM_OF_CZ]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[PLC_ADDR_STREET]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[PLC_ADDR_ZIP]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[RGN_CTRY_ABBR]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[ORZ_CTRY_ALPHA]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:Column",
+                                            "Token": "[RGN_ST_ABBR]",
+                                            "Properties": [
+                                                {
+                                                    "Qualifier": "[x]"
+                                                }
+                                            ],
+                                            "Roles": [
+                                                "IDENTIFIER",
+                                                "QUALIFIED"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "InternalType": "sql:WhereCondition",
+                            "Roles": [
+                                "CONDITION"
+                            ],
+                            "Children": [
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:ScalarFunction",
+                                            "Token": "IsNull",
+                                            "Roles": [
+                                                "FUNCTION"
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "InternalType": "sql:Column",
+                                                    "Token": "[ORZ_HISTORICAL_STATUS]",
+                                                    "Properties": [
+                                                        {
+                                                            "Qualifier": "[r]"
+                                                        }
+                                                    ],
+                                                    "Roles": [
+                                                        "IDENTIFIER",
+                                                        "QUALIFIED"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:Primitive",
+                                                    "Token": "''",
+                                                    "Roles": [
+                                                        "PRIMITIVE"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:ComparisonOperator",
+                                            "Token": "<>",
+                                            "Roles": [
+                                                "OPERATOR",
+                                                "NOT",
+                                                "EQUAL"
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:Primitive",
+                                            "Token": "'CLOSED'",
+                                            "Roles": [
+                                                "PRIMITIVE"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "InternalType": "",
+                                    "Roles": [
+                                        "CONDITION"
+                                    ],
+                                    "Children": [
+                                        {
+                                            "InternalType": "sql:ScalarFunction",
+                                            "Token": "IsNull",
+                                            "Roles": [
+                                                "FUNCTION"
+                                            ],
+                                            "Children": [
+                                                {
+                                                    "InternalType": "sql:Column",
+                                                    "Token": "[ORZ_HISTORICAL_STATUS_STDT]",
+                                                    "Properties": [
+                                                        {
+                                                            "Qualifier": "[r]"
+                                                        }
+                                                    ],
+                                                    "Roles": [
+                                                        "IDENTIFIER",
+                                                        "QUALIFIED"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:Primitive",
+                                                    "Token": "''",
+                                                    "Roles": [
+                                                        "PRIMITIVE"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:ComparisonOperator",
+                                            "Token": ">",
+                                            "Roles": [
+                                                "OPERATOR",
+                                                "GREATER_THAN"
+                                            ]
+                                        },
+                                        {
+                                            "InternalType": "sql:ScalarFunction",
+                                            "Token": "GETDATE",
+                                            "Roles": [
+                                                "FUNCTION"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "InternalType": "sql:GO",
+                    "Token": "GO",
+                    "Roles": [
+                        "DIRECTIVE"
+                    ]
+                }
+            ]
+        }
+    ]
+}
