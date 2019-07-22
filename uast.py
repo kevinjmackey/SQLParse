@@ -315,6 +315,8 @@ class Role(enum.Enum):
     DATASOURCE = 130
     # Join clause for database tables
     JOINCLAUSE = 131
+    # Table hintfor database tables
+    TABLEHINT = 133
 
 
 

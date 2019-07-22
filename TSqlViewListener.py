@@ -361,6 +361,21 @@ class TSqlViewListener(TSqlParserListener):
         self.currentParent = self.parentStack.pop()
         self.currentNode = self.currentParent
 
+    # Enter a parse tree produced by TSqlParser#with_table_hints.
+    def enterWith_table_hints(self, ctx:TSqlParser.With_table_hintsContext):
+        node = uast.Node()
+        node.internalType = "sql:TableHints"
+        node.roles.append(uast.Role.TABLEHINT)
+        hints = []
+        for i in range(ctx.getChildCount()):
+            hints.append(ctx.getChild(i).getText())
+        node.token = " ".join(hints)
+        self.currentParent.children.append(node)
+
+    # Exit a parse tree produced by TSqlParser#with_table_hints.
+    def exitWith_table_hints(self, ctx:TSqlParser.With_table_hintsContext):
+        pass
+
     # Enter a parse tree produced by TSqlParser#join_clause.
     def enterJoin_clause(self, ctx:TSqlParser.Join_clauseContext):
         node = uast.Node()
@@ -371,7 +386,7 @@ class TSqlViewListener(TSqlParserListener):
             node.token = "INNER {}".format(token)
         outer = " OUTER" if ctx.OUTER() != None else ""
         if ctx.join_type != None:
-            node.token = "{0}{1} {2}".format(ctx.join_type, outer, token)
+            node.token = "{0}{1} {2}".format(ctx.getChild(0).getText(), outer, token)
         self.currentParent.children.append(node)
         self.parentStack.append(self.currentParent)
         self.currentParent = node

@@ -602,12 +602,19 @@
                                             "Roles": [
                                                 "DATASOURCE"
                                             ]
+                                        },
+                                        {
+                                            "InternalType": "sql:TableHints",
+                                            "Token": "WITH ( NOLOCK )",
+                                            "Roles": [
+                                                "TABLEHINT"
+                                            ]
                                         }
                                     ]
                                 },
                                 {
                                     "InternalType": "sql:Join",
-                                    "Token": "<class 'antlr4.Token.CommonToken'> JOIN",
+                                    "Token": "LEFT JOIN",
                                     "Roles": [
                                         "JOINCLAUSE"
                                     ],
@@ -629,6 +636,13 @@
                                                     "Token": "[Legacy].[M204_XORZ_REOCCUR]",
                                                     "Roles": [
                                                         "DATASOURCE"
+                                                    ]
+                                                },
+                                                {
+                                                    "InternalType": "sql:TableHints",
+                                                    "Token": "WITH ( NOLOCK )",
+                                                    "Roles": [
+                                                        "TABLEHINT"
                                                     ]
                                                 }
                                             ]
